@@ -86,7 +86,9 @@ public class ProductController {
 		
 		if(productOptional.isPresent()) {
 			Product product = productOptional.get();
-			product.setName(product.getName());
+			product.setName(productDTO.getName());
+			product.setPrice(productDTO.getPrice());
+			product.setMaker(productDTO.getMaker());
 			productService.save(product);
 			
 			return ResponseEntity.ok("registro actualizado");
